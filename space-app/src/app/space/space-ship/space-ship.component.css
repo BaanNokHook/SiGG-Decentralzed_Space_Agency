@@ -1,0 +1,56 @@
+:host {
+  display: inline-block;
+  max-width: 160px;
+  margin: 10px;
+  text-align: center;
+}
+
+.spaceship {
+  max-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+
+.health {
+  background-color: red;
+  height: 10px;
+}
+
+.health div {
+  background-color: green;
+  height: 100%;
+}
+
+.property {
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px;
+  color: grey;
+}
+
+.property.active {
+  color: white;
+}
+
+.images {
+  position: relative;
+}
+
+.images .pilot {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 25%;
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.658);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.actions {
+  position: relative;
+  height: 28px;
+}
