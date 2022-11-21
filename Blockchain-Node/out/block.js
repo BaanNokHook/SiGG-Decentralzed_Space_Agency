@@ -7,17 +7,16 @@ class Block {
         this.transactions = transactions;
         this.timestamp = timestamp;
         this.prevHash = prevHash;
-        this.hash = this.calHash();
+        this.hash = this.calcHash();
         this.nonce = 0;
     }
-    calHash() {
-        return crypto_js_1.SHA256(this.height + this.prevHash + this.timestamp + JSON.stringify(this.transactions + this.nonce).toString());
+    calcHash() {
+        return crypto_js_1.SHA256(this.height + this.prevHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();
     }
-    ;
     mineBlock(difficulty) {
         while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) {
             this.nonce++;
-            this.hash = this.calHash();
+            this.hash = this.calcHash();
         }
         console.log(`Mined Block: ${this.hash}`);
     }
@@ -31,9 +30,3 @@ class Block {
     }
 }
 exports.default = Block;
-function mineBlock(difficulty) {
-    throw new Error('Function not implemented.');
-}
-function hasValidTransactions() {
-    throw new Error('Function not Implemented.');
-}
